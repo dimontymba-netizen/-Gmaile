@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция: Как войти в новый Gmail | От Тимофея для Андрея</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        google: {
+                            blue: '#1a73e8',
+                            red: '#ea4335',
+                            yellow: '#fbbc05',
+                            green: '#34a853',
+                            bg: '#f8f9fa',
+                            surface: '#ffffff'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
+                        'glow': '0 0 25px -5px rgba(26, 115, 232, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .ui-mockup-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-red-100 selection:text-google-red">
+
+    <!-- Top Navigation / Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-google-blue via-google-red to-google-yellow p-[2px] flex items-center justify-center shadow-md">
+                    <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid me-0 fa-envelope text-google-red text-lg"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold text-slate-900 text-base leading-tight">Гайд по Gmail</h1>
+                    <p class="text-xs text-slate-500 font-medium">Специально для Андрея 🚀</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <a href="#checklist" class="hidden sm:flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-square-check text-google-green"></i>
+                    <span>Чек-лист</span>
+                </a>
+                <a href="#tips" class="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-red-50 text-google-red hover:bg-red-100 transition">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Советы</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex-grow w-full">
+
+        <!-- Friend Greeting Card -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white p-6 sm:p-8 mb-8 shadow-xl">
+            <!-- Decorative background elements -->
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-google-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute right-20 -top-10 w-40 h-40 bg-google-red/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div class="space-y-3 max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-amber-300 text-xs font-semibold border border-white/10">
+                        <i class="fa-solid fa-hand-shake"></i> Лично от Тимофея
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+                        Здорова, Андрей! 👋
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Сделал для тебя простой и понятный гайд без всякой умной мути. Если тебе нужно зайти во второй аккаунт Gmail на телефоне (или на ноуте) — просто следуй шагам ниже. Разберешься за 2 минуты!
+                    </p>
+                </div>
+                <div class="flex-shrink-0 self-stretch sm:self-center flex sm:flex-col justify-end gap-2">
+                    <div class="px-4 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 text-center flex-1 sm:flex-none">
+                        <span class="block text-2xl font-bold text-google-green">100%</span>
+                        <span class="text-[11px] text-slate-300">Понятно</span>
+                    </div>
+                    <div class="px-4 py-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 text-center flex-1 sm:flex-none">
+                        <span class="block text-2xl font-bold text-google-yellow">2 мин</span>
+                        <span class="text-[11px] text-slate-300">Времени</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Device Selector Tabs -->
+        <div class="mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Выбери, где нужно зайти:</h3>
+                    <p class="text-xs sm:text-sm text-slate-500">Основной гайд сделан для телефона Android</p>
+                </div>
+                <!-- Progress indicator for checklist -->
+                <div id="progressContainer" class="hidden sm:flex items-center gap-3 bg-white px-4 py-2 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="text-xs font-semibold text-slate-600">Прогресс:</div>
+                    <div class="w-32 bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                        <div id="progressBar" class="bg-google-green h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    <span id="progressText" class="text-xs font-bold text-slate-700">0/4</span>
+                </div>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="grid grid-cols-2 gap-3 p-1.5 bg-slate-200/70 rounded-2xl">
+                <button id="tabAndroidBtn" onclick="switchTab('android')" class="py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 bg-white text-google-blue shadow-md">
+                    <i class="fa-brands fa-android text-xl text-google-green"></i>
+                    <span>📱 На телефоне (Android)</span>
+                </button>
+                <button id="tabLaptopBtn" onclick="switchTab('laptop')" class="py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 text-slate-600 hover:text-slate-900">
+                    <i class="fa-solid fa-laptop text-xl text-slate-500"></i>
+                    <span>💻 На ноутбуке</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- SECTION 1: ANDROID GUIDE (PRIMARY) -->
+        <div id="androidGuide" class="space-y-6">
+            <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-google-blue text-xl mt-0.5 flex-shrink-0"></i>
+                <p class="text-sm text-blue-900">
+                    <strong>Подсказка:</strong> На всех смартфонах Android (Samsung, Xiaomi, Realme, POCO и др.) всё делается одинаково через официальное приложение <strong>Gmail</strong>.
+                </p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft transition-all hover:border-slate-300">
+                <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <div class="flex-1 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full bg-google-blue text-white font-black flex items-center justify-center text-sm shadow-md">1</span>
+                            <h4 class="text-lg sm:text-xl font-bold text-slate-900">Открой приложение Gmail</h4>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Найди на рабочем столе или в меню приложений иконку <strong>Gmail</strong> (красно-белый конвертик или разноцветная буква M). Нажми на неё.
+                        </p>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-500 flex items-center gap-2">
+                            <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                            <span>Обычно приложение находится в папке "Google" на главном экране.</span>
+                        </div>
+                    </div>
+                    <!-- UI Illustration -->
+                    <div class="w-full lg:w-72 flex-shrink-0 flex justify-center">
+                        <div class="w-56 bg-slate-900 rounded-[32px] p-2.5 shadow-xl border-4 border-slate-800">
+                            <div class="bg-white rounded-[24px] p-4 text-center space-y-4 pt-6 pb-6">
+                                <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mx-auto shadow-inner border border-red-100">
+                                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                                        <path d="M1.5 5.25L12 12.75L22.5 5.25" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="#EA4335" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-slate-800 block">Gmail</span>
+                                    <span class="text-[10px] text-slate-400">Нажми на иконку</span>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-blue-100 text-google-blue flex items-center justify-center mx-auto text-xs animate-bounce">
+                                    <i class="fa-solid fa-hand-pointer"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft transition-all hover:border-slate-300">
+                <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <div class="flex-1 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full bg-google-blue text-white font-black flex items-center justify-center text-sm shadow-md">2</span>
+                            <h4 class="text-lg sm:text-xl font-bold text-slate-900">Нажми на круглую аватарку сверху</h4>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            В самом верхнем правом углу экрана увидишь <strong>кругляшок с твоей аватаркой</strong> или первой буквой имени. Нажми прямо на него.
+                        </p>
+                        <p class="text-slate-600 text-sm">
+                            Откроется всплывающее меню со списком текущих аккаунтов.
+                        </p>
+                    </div>
+                    <!-- UI Illustration -->
+                    <div class="w-full lg:w-72 flex-shrink-0 flex justify-center">
+                        <div class="w-56 bg-slate-900 rounded-[32px] p-2.5 shadow-xl border-4 border-slate-800">
+                            <div class="bg-slate-100 rounded-[24px] p-3 space-y-3">
+                                <!-- Fake App Header -->
+                                <div class="bg-white rounded-xl p-2 flex items-center justify-between border border-slate-200 shadow-sm">
+                                    <i class="fa-solid fa-bars text-slate-400 text-xs"></i>
+                                    <span class="text-[10px] font-semibold text-slate-500">Поиск в почте</span>
+                                    <!-- Avatar button highlighted -->
+                                    <div class="relative">
+                                        <div class="w-6 h-6 rounded-full bg-google-blue text-white font-bold text-[10px] flex items-center justify-center ring-2 ring-google-red ring-offset-1 animate-pulse">
+                                            А
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5 opacity-40">
+                                    <div class="h-8 bg-white rounded-lg"></div>
+                                    <div class="h-8 bg-white rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft transition-all hover:border-slate-300">
+                <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <div class="flex-1 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full bg-google-blue text-white font-black flex items-center justify-center text-sm shadow-md">3</span>
+                            <h4 class="text-lg sm:text-xl font-bold text-slate-900">Выбери «Добавить аккаунт»</h4>
+                        </div>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            В появившемся окошке пролистай чуть вниз и нажми на пункт <strong>«Добавить аккаунт»</strong> (рядом с ним иконка плюсика <i class="fa-solid fa-plus text-google-blue"></i>).
+                        </p>
+                        <p class="text-slate-600 text-sm">
+                            Далее из списка служб выбери **Google**.
+                        </p>
+                    </div>
+                    <!-- UI Illustration -->
+                    <div class="w-full lg:w-72 flex-shrink-0 flex justify-center">
+                        <div class="w-56 bg-slate-900 rounded-[32px] p-2.5 shadow-xl border-4 border-slate-800">
+                            <div class="bg-white rounded-[24px] p-3 space-y-2 text-left">
+                                <div class="text-[10px] font-bold text-slate-400 border-b pb-1">АККАУНТЫ</div>
+                                <div class="flex items-center gap-2 p-1.5 rounded-lg bg-slate-50">
+                                    <div class="w-5 h-5 rounded-full bg-slate-300 text-[9px] flex items-center justify-center font-bold">А</div>
+                                    <div class="text-[9px] truncate text-slate-600">старая_почта@gmail.com</div>
+                                </div>
+                                <!-- Active Target Button -->
+                                <div class="flex items-center gap-2 p-2 rounded-xl bg-blue-50 border border-blue-200 text-google-blue font-bold text-[10px] shadow-sm">
+                                    <i class="fa-solid fa-user-plus text-xs"></i>
+                                    <span>Добавить аккаунт</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft transition-all hover:border-slate-300">
+                <div class="flex flex-col lg:flex-row gap-6 items-center">
+                    <div class="flex-1 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full bg-google-blue text-white font-black flex items-center justify-center text-sm shadow-md">4</span>
+                            <h4 class="text-lg sm:text-xl font-bold text-slate-900">Введи Email и Пароль</h4>
+                        </div>
+                        <ul class="space-y-2 text-slate-600 text-sm sm:text-base">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-google-green mt-1"></i>
+                                <span>Телефон может попросить разблокировать экран (отпечаток или PIN).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-google-green mt-1"></i>
+                                <span>Введи адрес новой почты (например: <code class="bg-slate-100 px-1.5 py-0.5 rounded text-google-red">andrey2026@gmail.com</code>) и нажми <strong>«Далее»</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-google-green mt-1"></i>
+                                <span>Введи пароль от аккаунта и снова нажми <strong>«Далее»</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-google-green mt-1"></i>
+                                <span>Нажми кнопку <strong>«Принимаю»</strong> для соглашения.</span>
+                            </li>
+                        </ul>
+                        <div class="bg-green-50 border border-green-200 text-green-900 rounded-xl p-3 text-xs font-semibold">
+                            🎉 Готово! Новая почта добавлена. Переключаться между старой и новой почтой можно в один клик по той же аватарке вверху.
+                        </div>
+                    </div>
+                    <!-- UI Illustration -->
+                    <div class="w-full lg:w-72 flex-shrink-0 flex justify-center">
+                        <div class="w-56 bg-slate-900 rounded-[32px] p-2.5 shadow-xl border-4 border-slate-800">
+                            <div class="bg-white rounded-[24px] p-4 text-left space-y-3">
+                                <div class="flex items-center gap-1">
+                                    <span class="text-google-blue font-black text-xs">G</span>
+                                    <span class="text-google-red font-black text-xs">o</span>
+                                    <span class="text-google-yellow font-black text-xs">o</span>
+                                    <span class="text-google-blue font-black text-xs">g</span>
+                                    <span class="text-google-green font-black text-xs">l</span>
+                                    <span class="text-google-red font-black text-xs">e</span>
+                                </div>
+                                <div class="text-[11px] font-bold text-slate-800">Вход</div>
+                                <div class="space-y-2">
+                                    <div class="border-2 border-google-blue rounded-lg p-1.5 text-[9px] text-slate-700 font-mono">
+                                        andrey@gmail.com
+                                    </div>
+                                    <div class="w-full bg-google-blue text-white font-bold text-[10px] text-center py-1.5 rounded-lg shadow">
+                                        Далее
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: LAPTOP GUIDE (SECONDARY) -->
+        <div id="laptopGuide" class="hidden space-y-6">
+            <div class="bg-slate-100 border border-slate-300 rounded-2xl p-4 flex items-start gap-3">
+                <i class="fa-solid fa-laptop text-slate-700 text-xl mt-0.5 flex-shrink-0"></i>
+                <p class="text-sm text-slate-800">
+                    <strong>Заметка на всякий случай:</strong> Инструкция для компьютера или ноутбука через любой браузер (Google Chrome, Яндекс, Edge, Opera).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Laptop Step 1 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs">1</span>
+                        <h4 class="font-bold text-slate-900 text-sm">Перейди на сайт</h4>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Открой браузер и введи в адресную строку <a href="https://gmail.com" target="_blank" class="text-google-blue underline font-semibold">gmail.com</a> или просто забей в поиске "Гмаил".
+                    </p>
+                    <div class="pt-2">
+                        <div class="bg-slate-100 rounded-lg p-2 text-center text-xs text-slate-500 font-mono border">
+                            gmail.com
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laptop Step 2 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs">2</span>
+                        <h4 class="font-bold text-slate-900 text-sm">Нажми "Войти" / Аватарку</h4>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Если не зашел в почту — нажми синюю кнопку <strong>«Войти»</strong> справа вверху. Если уже вошел в другой аккаунт — кликни на кругляшок с фото справа вверху и нажми <strong>«Добавить другой аккаунт»</strong>.
+                    </p>
+                    <div class="pt-2">
+                        <div class="bg-google-blue text-white rounded-lg p-1.5 text-center text-xs font-bold shadow">
+                            Войти
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laptop Step 3 -->
+                <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs">3</span>
+                        <h4 class="font-bold text-slate-900 text-sm">Введи данные</h4>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Введи логин (email) и пароль. Нажми «Далее». Готово, теперь почта открыта на ноутбуке!
+                    </p>
+                    <div class="pt-2">
+                        <div class="bg-green-50 text-google-green border border-green-200 rounded-lg p-2 text-center text-xs font-bold">
+                            <i class="fa-solid fa-check"></i> Успешный вход
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Checklist Section -->
+        <section id="checklist" class="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-google-blue"></i>
+                        <span>Чек-лист для Андрея</span>
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-500">Отмечай галочками по мере выполнения</p>
+                </div>
+                <button onclick="resetChecklist()" class="text-xs font-semibold text-slate-400 hover:text-slate-600 transition underline">
+                    Сбросить
+                </button>
+            </div>
+
+            <div class="space-y-3">
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200/60">
+                    <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-google-blue focus:ring-google-blue">
+                    <span class="text-sm font-medium text-slate-700">1. Открыл приложение Gmail на телефоне</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200/60">
+                    <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-google-blue focus:ring-google-blue">
+                    <span class="text-sm font-medium text-slate-700">2. Нажал на аватарку в правом верхнем углу</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200/60">
+                    <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-google-blue focus:ring-google-blue">
+                    <span class="text-sm font-medium text-slate-700">3. Выбрал пункт «Добавить аккаунт» -> Google</span>
+                </label>
+                <label class="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 hover:bg-slate-100 transition cursor-pointer border border-slate-200/60">
+                    <input type="checkbox" onchange="updateProgress()" class="chk-item w-5 h-5 rounded text-google-blue focus:ring-google-blue">
+                    <span class="text-sm font-medium text-slate-700">4. Ввел адрес почты, пароль и нажал «Принимаю»</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Useful Tips / Troublshooting -->
+        <section id="tips" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-amber-50/80 border border-amber-200 rounded-3xl p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h4 class="font-bold text-amber-950 text-base">Забыл пароль?</h4>
+                </div>
+                <p class="text-xs sm:text-sm text-amber-900 leading-relaxed">
+                    Если при вводе пароля пишет, что он неверный, нажми синюю надпись <strong>«Забыли пароль?»</strong> прямо под полем ввода. Google отправит SMS на твой номер или уведомление на телефон для подтверждения.
+                </p>
+            </div>
+
+            <div class="bg-blue-50/80 border border-blue-200 rounded-3xl p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 rounded-xl bg-google-blue text-white flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                    <h4 class="font-bold text-blue-950 text-base">Как переключаться?</h4>
+                </div>
+                <p class="text-xs sm:text-sm text-blue-900 leading-relaxed">
+                    После входа оба аккаунта будут работать одновременно. Чтобы быстро переключиться, просто <strong>проведи пальцем сверху вниз по аватарке</strong> в приложении Gmail!
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-2">
+            <p class="text-xs font-semibold text-slate-600">
+                Сделано Тимофеем специально для Андрея • 2026
+            </p>
+            <p class="text-[11px] text-slate-400">
+                Быстрая и понятная инструкция по входу в аккаунт Google / Gmail
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Switch between Android and Laptop tabs
+        function switchTab(device) {
+            const androidGuide = document.getElementById('androidGuide');
+            const laptopGuide = document.getElementById('laptopGuide');
+            const tabAndroidBtn = document.getElementById('tabAndroidBtn');
+            const tabLaptopBtn = document.getElementById('tabLaptopBtn');
+
+            if (device === 'android') {
+                androidGuide.classList.remove('hidden');
+                laptopGuide.classList.add('hidden');
+                
+                tabAndroidBtn.className = "py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 bg-white text-google-blue shadow-md";
+                tabLaptopBtn.className = "py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 text-slate-600 hover:text-slate-900";
+            } else {
+                androidGuide.classList.add('hidden');
+                laptopGuide.classList.remove('hidden');
+                
+                tabLaptopBtn.className = "py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 bg-white text-google-blue shadow-md";
+                tabAndroidBtn.className = "py-3 px-4 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 transition-all duration-200 text-slate-600 hover:text-slate-900";
+            }
+        }
+
+        // Update checklist progress
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                if (chk.checked) checkedCount++;
+            });
+
+            const total = checkboxes.length;
+            const percentage = Math.round((checkedCount / total) * 100);
+
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').innerText = `${checkedCount}/${total}`;
+        }
+
+        // Reset checklist
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            checkboxes.forEach(chk => chk.checked = false);
+            updateProgress();
+        }
+    </script>
+</body>
+</html>
